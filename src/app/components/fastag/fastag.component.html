@@ -1,0 +1,57 @@
+<div [ngClass]="showDetail ? 'row d-flex justify-content-evenly' : 'row d-flex  justify-content-start'">
+    <div class="col-md-4 card">
+        <h2 class="card-title text-center bg-primary text-white">
+            Recharge your FASTag
+        </h2>
+        <div class="card-body">
+            <form class="row g-3" [formGroup]="fastagForm"
+                (ngSubmit)="onSubmit(fastagForm)">
+                <div class="col-md-12">
+                    <label for="inputIOperator"
+                        class="form-label">Operators</label>
+                    <select id="inputIOperator" class="form-select"
+                        formControlName="operator">
+                        <option selected>Choose...</option>
+                        <option *ngFor="let operator of operators"
+                            value="{{operator}}">
+                            {{operator}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputVehicalNumber" class="form-label">
+                        Vehical Number
+                    </label>
+                    <input type="text" class="form-control"
+                        id="inputVehicalNumber"
+                        formControlName="vehicalNumber">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputAmount"
+                        class="form-label">Amount</label>
+                    <input type="number" class="form-control"
+                        id="inputAmount"
+                        formControlName="amount">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox"
+                            id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Confirm
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-7 card" *ngIf="showDetail">
+        <h2 class="card-title text-center bg-primary text-white">Vehical Detail</h2>
+        <div class="card-body">
+            <app-fastag-detail></app-fastag-detail>
+        </div>
+    </div>
+</div>

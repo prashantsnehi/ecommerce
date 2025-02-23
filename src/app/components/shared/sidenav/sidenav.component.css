@@ -1,0 +1,6 @@
+.sidenav {
+    display: flex;
+    flex-flow: column;
+    background-color: green;
+    height: 100%;
+}

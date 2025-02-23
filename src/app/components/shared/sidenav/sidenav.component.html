@@ -1,0 +1,235 @@
+<!-- <div class="d-flex align-items-stretch"> -->
+<div class="row d-flex align-content-center">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <a routerLink="/">
+                    <img src="images/pointpal.png" />
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="accordion w-100" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" 
+                                type="button"
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#dashboard"
+                                aria-expanded="false" 
+                                aria-controls="dashboard"
+                                routerLink="/">
+                                Dashboard
+                            </button>
+                        </h2>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" 
+                                type="button"
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#recharge"
+                                aria-controls="recharge"
+                                aria-expanded="false">
+                                Recahrge
+                            </button>
+                        </h2>
+                        <div id="recharge" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            routerLink="/fastag">
+                                            Fastag Recharge
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Prepaid Recharge
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" 
+                                type="button"
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#giftCards"
+                                aria-expanded="false"
+                                aria-controls="giftCards"
+                                routerLink="/gift-cards">
+                                Gift Cards
+                            </button>
+                        </h2>
+                        <div id="giftCards" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <!-- <div class="accordion-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            routerLink="/gift-cards">
+                                            Electronics
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            routerLink="/gift-cards">
+                                            Apparels
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            routerLink="/gift-cards">
+                                            LifeStyle
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#utilities"
+                                aria-expanded="false" aria-controls="utilities">
+                                Utility Payments
+                            </button>
+                        </h2>
+                        <div id="utilities" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Electricity
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Water
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            GAS
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#wallet" aria-expanded="false"
+                                aria-controls="wallet">
+                                Wallet-Topup
+                            </button>
+                        </h2>
+                        <div id="wallet" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Top-up Request
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Payment Gateway
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#reports" aria-expanded="false"
+                                aria-controls="reports">
+                                Reports
+                            </button>
+                        </h2>
+                        <div id="reports" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Top-up Request History
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Transactions History
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Ledger History
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#support" aria-expanded="false"
+                                aria-controls="support">
+                                Support
+                            </button>
+                        </h2>
+                        <div id="support" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            BBPS Complaint
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Agreement Download
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#">
+                                            Bank Details
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- </div> -->
