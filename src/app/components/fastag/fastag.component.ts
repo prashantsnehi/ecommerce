@@ -8,7 +8,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrl: './fastag.component.css'
 })
 export class FastagComponent implements OnInit {
-  
   operators: string[] = ['Airtel Payment Bank', 'IDFC Bank', 'HDFC Bank', 'PayTm Payment Bank']
   showDetail: boolean;
 
@@ -20,7 +19,8 @@ export class FastagComponent implements OnInit {
     this.fastagForm = this.fb.group ({
       operator: ['', [Validators.required]],
       vehicalNumber: ['', [Validators.required]],
-      amount: ['',[Validators.required, Validators.maxLength(3), Validators.minLength(2)]]
+      amount: ['',[Validators.required, Validators.maxLength(3), Validators.minLength(2)]],
+      agreed: ['', [Validators.required]]
     }); 
   }
 
@@ -29,5 +29,10 @@ export class FastagComponent implements OnInit {
     if(form.valid) {
       this.showDetail = true;
     }
+  }
+
+  cencelButton() {
+    this.showDetail = false;
+    this.fastagForm.reset();
   }
 }

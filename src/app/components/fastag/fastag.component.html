@@ -1,5 +1,5 @@
 <div [ngClass]="showDetail ? 'row d-flex justify-content-evenly' : 'row d-flex  justify-content-start'">
-    <div class="col-md-4 card">
+    <div class="col-md-12 card"  *ngIf="!showDetail">
         <h2 class="card-title text-center bg-primary text-white">
             Recharge your FASTag
         </h2>
@@ -33,10 +33,12 @@
                         id="inputAmount"
                         formControlName="amount">
                 </div>
-                <div class="col-12">
+                <div class="col-12" [ngStyle]="{ 'border' : '2px solid red' }">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox"
-                            id="gridCheck">
+                        <input class="form-check-input" 
+                            type="checkbox"
+                            id="gridCheck"
+                            formControlName="agreed">
                         <label class="form-check-label" for="gridCheck">
                             Confirm
                         </label>
@@ -48,10 +50,10 @@
             </form>
         </div>
     </div>
-    <div class="col-md-7 card" *ngIf="showDetail">
+    <div class="col-md-12 card" *ngIf="showDetail">
         <h2 class="card-title text-center bg-primary text-white">Vehical Detail</h2>
         <div class="card-body">
-            <app-fastag-detail></app-fastag-detail>
+            <app-fastag-detail [requestForm]="fastagForm" (cancelButton)="cencelButton()"></app-fastag-detail>
         </div>
     </div>
 </div>

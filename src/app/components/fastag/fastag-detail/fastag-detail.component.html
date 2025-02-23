@@ -1,1 +1,94 @@
-<p>fastag-detail works!</p>
+<form class="row g-3 justify-content-evenly" [formGroup]="rechargeFastag">
+    <div class="col-md-3">
+        <label for="inputCategory" class="form-label">Category</label>
+        <input type="text"
+            class="form-control"
+            id="inputCategory"
+            formControlName="category"
+            [disabled]="isDisabled">
+    </div>
+    <div class="col-md-3">
+        <label for="inputOperator" class="form-label">Operator</label>
+        <input type="text"
+            class="form-control"
+            id="inputOperator"
+            formControlName="operator"
+            [disabled]="isDisabled">
+    </div>
+    <div class="col-md-3">
+        <label for="inputVehical" class="form-label">Vehical Number</label>
+        <input type="text"
+            class="form-control"
+            id="inputVehical"
+            formControlName="vehicalNumber"
+            [disabled]="isDisabled">
+    </div>
+    <div class="col-md-3">
+        <label for="inputMobile" class="form-label">Mobile Number</label>
+        <input type="text"
+            class="form-control"
+            id="inputMobile"
+            formControlName="mobile"
+            [disabled]="isDisabled">
+    </div>
+    <div class="col-12">
+        <label for="inputCustomerName" class="form-label">CustomerName</label>
+        <input type="text" 
+            class="form-control" 
+            id="inputCustomerName"
+            [disabled]="isDisabled"
+            formControlName="customerName">
+    </div>
+    <div class="col-12">
+        <label for="inputAddress1" class="form-label">Address</label>
+        <input type="text" 
+            class="form-control" 
+            id="inputAddress2"
+            [disabled]="isDisabled"
+            value="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-3">
+        <label for="inputAmount" class="form-label">Amount</label>
+        <input type="text" 
+            class="form-control" 
+            id="inputAmount"
+            [disabled]="isDisabled"
+            formControlName="amount">
+    </div>
+    <div class="col-md-3">
+        <label for="inputAmountToPay" class="form-label">Charges</label>
+        <input type="text" 
+            class="form-control" 
+            id="inputAmountToPay" 
+            [disabled]="isDisabled"
+            formControlName="charges">
+    </div>
+    <div class="col-md-3">
+        <label for="inputAmountToPay" class="form-label">AmountToPay</label>
+        <input type="text" 
+            class="form-control" 
+            id="inputAmountToPay"
+            formControlName="amountToPay">
+    </div>
+    <div class="col-md-3">
+        <label for="inputAmountToPay" class="form-label">TPin</label>
+        <input type="text" 
+            class="form-control" 
+            id="inputTpin"
+            formControlName="tpin">
+    </div>
+    <div class="col-12" [ngStyle]="{ 'border': '2px solid red' }">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                I confirm that all details are correct.
+            </label>
+        </div>
+    </div>
+    <div class="row  d-grid gap-2">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary">Pay</button>
+            <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+</form>
