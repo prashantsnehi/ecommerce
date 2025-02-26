@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { consumerDestroy } from '@angular/core/primitives/signals';
 
 @Component({
   selector: 'app-layout',
@@ -14,6 +15,6 @@ export class LayoutComponent implements OnInit {
   
   toggleSideNav() {
     this.showHideNav = !this.showHideNav;
-    
+    console.log(this.showHideNav)
   }
 }

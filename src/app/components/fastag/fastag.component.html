@@ -55,7 +55,9 @@
                     </div>
                 </div>
                 <div class="col-12 d-grid gap-2">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" 
+                        class="btn btn-primary"
+                        [disabled]="!fastagForm.valid">Submit</button>
                 </div>
             </form>
         </div>

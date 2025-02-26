@@ -1,23 +1,28 @@
-<div class="row d-flex justify-content-between">
-    <div class="d-grid gap-2 " role="group"
-        aria-label="Basic outlined example">
-        <button type="button" 
+<div class="row d-flex justify-content-between mt-4">
+    <div class="col-md-3 d-grid gap-2 mb-2">
+        <button type="button"
             class="btn btn-danger btn-lg"
             (click)="electronics()">
             Electronics
         </button>
-        <button type="button" 
-            class="btn btn-primary" 
+    </div>
+    <div class="col-md-3 d-grid gap-2 mb-2">
+        <button type="button"
+            class="btn btn-primary"
             (click)="apparels()">
             Apparels
         </button>
-        <button type="button" 
-            class="btn btn-info" 
+    </div>
+    <div class="col-md-3 d-grid gap-2 mb-2">
+        <button type="button"
+            class="btn btn-info"
             (click)="lifeStyle()">
             LifeStyle
         </button>
-        <button type="button" 
-            class="btn btn-success" 
+    </div>
+    <div class="col-md-3 d-grid gap-2 mb-2">
+        <button type="button"
+            class="btn btn-success"
             (click)="travel()">
             Travel
         </button>
@@ -25,7 +30,9 @@
 </div>
 
 <div class="row mt-3 d-flex justify-content-evenly">
-    <div class="col-md-4 p-3" *ngFor="let card of currentGiftCards; let i = index">
-        <app-giftcard [cardDetail]="card" (showMore)="toggleText(i)"></app-giftcard>
+    <div class="col-md-4 p-3"
+        *ngFor="let card of currentGiftCards; let i = index">
+        <app-giftcard [cardDetail]="card"
+            (showMore)="toggleText(i)"></app-giftcard>
     </div>
 </div>

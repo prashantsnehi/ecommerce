@@ -14,7 +14,7 @@ export class ChartsComponent implements OnInit {
   labels: ['Dec', 'Jan', 'Feb'];
 
   ngOnInit() {
-    this.chart = new Chart('canvas', {
+    this.chart = new Chart('gtv', {
           type: 'doughnut',
           data: {
             labels: [
