@@ -1,0 +1,4 @@
+.showHide {
+    transition: 3s;
+    transition-timing-function: ease-in-out;
+}

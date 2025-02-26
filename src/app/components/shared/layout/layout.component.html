@@ -19,10 +19,12 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-2" *ngIf="showHideNav">
-                        <app-sidenav (showHideNav)="toggleSideNav()"></app-sidenav>
+                    <div class="col-md-2"
+                        [ngStyle]="showHideNav ? {'display': 'block', 'transition': '3s'} : {'display': 'none', 'transition': '3s'}">
+                        <app-sidenav
+                            (showHideNav)="toggleSideNav()"></app-sidenav>
                     </div>
-                    <div [ngClass]="!showHideNav ? 'col-md-12' : 'col-md-10'">
+                    <div [ngClass]="!showHideNav ? 'col-md-12 m-4' : 'col-md-10 m-4'">
                         <router-outlet></router-outlet>
                     </div>
                 </div>
