@@ -3,9 +3,9 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NavbarComponent } from './components/shared/layout/navbar/navbar.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
-import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
+import { SidenavComponent } from './components/shared/layout/sidenav/sidenav.component';
 import { FastagComponent } from './components/fastag/fastag.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +18,11 @@ import { ElectricityChartComponent } from './components/dashboard/electricity-ch
 import { RechargeChartComponent } from './components/dashboard/recharge-chart/recharge-chart.component';
 import { TopupComponent } from './components/dashboard/topup/topup.component';
 import { GiftCardsComponent } from './components/gift-cards/gift-cards.component';
+import { GiftcardComponent } from './components/gift-cards/giftcard/giftcard.component';
+import { ShowCharPipe } from './_pipes/show-char.pipe';
+import { PrepaidRechargeComponent } from './components/prepaid-recharge/prepaid-recharge.component';
+import { UtiltiyPaymentsComponent } from './components/utiltiy-payments/utiltiy-payments.component';
+import { TopUpRequestHistoryComponent } from './components/reports/top-up-request-history/top-up-request-history.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { GiftCardsComponent } from './components/gift-cards/gift-cards.component
     ElectricityChartComponent,
     RechargeChartComponent,
     TopupComponent,
-    GiftCardsComponent
+    GiftCardsComponent,
+    GiftcardComponent,
+    ShowCharPipe,
+    PrepaidRechargeComponent,
+    UtiltiyPaymentsComponent,
+    TopUpRequestHistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div class="card" style="width: 100%;">
+    <img src="{{cardDetail.brandImageLogo}}" class="card-img-top remove-background" alt="logo">
+    <hr />
+    <div class="card-body">
+        <h3 class="card-title">{{cardDetail.brandName}}</h3>
+        <h5 class="text-danger">Denomination: {{cardDetail.denomination | currency:'INR'}}</h5>
+
+        <p class="card-text">{{cardDetail.description | showChar:togglePipe}}
+            <span>
+                <button
+                    type="button" 
+                    class="btn btn-link"
+                    (click)="showMoreText()">
+                        {{togglePipe ? "Show More" : "Show Less"}}
+                </button>
+            </span>
+        </p>
+        <a type="button" class="btn btn-primary d-grid gap-2">Purchase</a>
+    </div>
+</div>

@@ -4,8 +4,9 @@
             Recharge your FASTag
         </h2>
         <div class="card-body">
-            <form class="row g-3" [formGroup]="fastagForm"
-                (ngSubmit)="onSubmit(fastagForm)">
+            <form class="row g-3 needs-validation" [formGroup]="fastagForm"
+                (ngSubmit)="onSubmit(fastagForm)"
+                novalidate>
                 <div class="col-md-12">
                     <label for="inputIOperator"
                         class="form-label">Operators</label>
@@ -22,16 +23,25 @@
                     <label for="inputVehicalNumber" class="form-label">
                         Vehical Number
                     </label>
-                    <input type="text" class="form-control"
+                    <input type="text" 
+                        #code
+                        class="form-control"
                         id="inputVehicalNumber"
-                        formControlName="vehicalNumber">
+                        (input)="code.value = code.value.toUpperCase()"
+                        formControlName="vehicalNumber"
+                        required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter vehical number.</div>
                 </div>
                 <div class="col-md-6">
                     <label for="inputAmount"
                         class="form-label">Amount</label>
                     <input type="number" class="form-control"
                         id="inputAmount"
-                        formControlName="amount">
+                        formControlName="amount"
+                        required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter vehical number.</div>
                 </div>
                 <div class="col-12" [ngStyle]="{ 'border' : '2px solid red' }">
                     <div class="form-check">

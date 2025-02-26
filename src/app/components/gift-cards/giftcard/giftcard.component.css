@@ -1,0 +1,30 @@
+.remove-background {
+    height: 250px;
+    /* mix-blend-mode: multiply; */
+    /* filter: contrast(1); */
+    object-fit: contain;
+    /* padding: 2px; */
+    border-radius: 20px;
+    margin-top: -5px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+  @media only screen and (max-width: 700px){
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px){
+    .responsive {
+      width: 100%;
+    }
+  }

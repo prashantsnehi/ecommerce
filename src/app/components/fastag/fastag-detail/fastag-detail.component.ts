@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { error } from 'console';
 
 @Component({
   selector: 'app-fastag-detail',
@@ -27,9 +28,18 @@ export class FastagDetailComponent implements OnInit {
       amount: [this.requestForm.value.amount, [Validators.required]],
       charges: ['0.00', [Validators.required]],
       amountToPay: ['', [Validators.required]],
+      confirmation: ['', [Validators.required]],
       tpin: ['', [Validators.required]]
     }
     )
+  }
+
+  pay(submitForm: FormGroup) {
+    if(submitForm.valid) {
+      alert('Bill paid successfully');
+      this.cancelButton.emit();
+      this.router.navigateByUrl('/fastag');
+    }
   }
 
   cancel() {

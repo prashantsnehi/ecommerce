@@ -1,15 +1,31 @@
-<div class="row">
-    <div class="btn-group d-flex justify-content-between" role="group"
+<div class="row d-flex justify-content-between">
+    <div class="d-grid gap-2 " role="group"
         aria-label="Basic outlined example">
-        <button type="button"
-            class="btn btn-outline-primary">Electronics</button>
-        <button type="button" class="btn btn-outline-primary">Apparels</button>
-        <button type="button" class="btn btn-outline-primary">LifeStyle</button>
-        <button type="button" class="btn btn-outline-primary">Pantaloon</button>
-        <button type="button" class="btn btn-outline-primary">WestSide</button>
-        <button type="button" class="btn btn-outline-primary">Croma
-            Store</button>
-        <button type="button" class="btn btn-outline-primary">Reliance
-            Digital</button>
+        <button type="button" 
+            class="btn btn-danger btn-lg"
+            (click)="electronics()">
+            Electronics
+        </button>
+        <button type="button" 
+            class="btn btn-primary" 
+            (click)="apparels()">
+            Apparels
+        </button>
+        <button type="button" 
+            class="btn btn-info" 
+            (click)="lifeStyle()">
+            LifeStyle
+        </button>
+        <button type="button" 
+            class="btn btn-success" 
+            (click)="travel()">
+            Travel
+        </button>
+    </div>
+</div>
+
+<div class="row mt-3 d-flex justify-content-evenly">
+    <div class="col-md-4 p-3" *ngFor="let card of currentGiftCards; let i = index">
+        <app-giftcard [cardDetail]="card" (showMore)="toggleText(i)"></app-giftcard>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <!-- <div class="d-flex align-items-stretch"> -->
-<div class="row d-flex align-content-center">
+<div class="row d-flex sidenav" *ngIf="!hideNav">
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
@@ -9,8 +9,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="accordion w-100" id="accordionExample">
+            <div class="col-md-12 m-1">
+                <div class="accordion w-100 m-auto" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button" 
@@ -19,7 +19,7 @@
                                 data-bs-target="#dashboard"
                                 aria-expanded="false" 
                                 aria-controls="dashboard"
-                                routerLink="/">
+                                (click)="getComponent('/')">
                                 Dashboard
                             </button>
                         </h2>
@@ -41,13 +41,13 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            routerLink="/fastag">
+                                            (click)="getComponent('/fastag')">
                                             Fastag Recharge
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/recharge')">
                                             Prepaid Recharge
                                         </a>
                                     </li>
@@ -62,8 +62,7 @@
                                 data-bs-toggle="collapse" 
                                 data-bs-target="#giftCards"
                                 aria-expanded="false"
-                                aria-controls="giftCards"
-                                routerLink="/gift-cards">
+                                (click)="getComponent('/gift-cards')">
                                 Gift Cards
                             </button>
                         </h2>
@@ -100,11 +99,12 @@
                                 data-bs-toggle="collapse" 
                                 data-bs-target="#utilities"
                                 aria-expanded="false" 
-                                aria-controls="utilities">
+                                aria-controls="utilities"
+                                (click)="getComponent('/utility')">
                                 Utility Payments
                             </button>
                         </h2>
-                        <div id="utilities" class="accordion-collapse collapse"
+                        <!-- <div id="utilities" class="accordion-collapse collapse"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <ul class="nav flex-column">
@@ -128,7 +128,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -145,13 +145,13 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/')">
                                             Top-up Request
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/')">
                                             Payment Gateway
                                         </a>
                                     </li>
@@ -174,19 +174,19 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/top-up-history')">
                                             Top-up Request History
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/top-up-history')">
                                             Transactions History
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/top-up-history')">
                                             Ledger History
                                         </a>
                                     </li>
@@ -209,19 +209,19 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/')">
                                             BBPS Complaint
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/')">
                                             Agreement Download
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page"
-                                            href="#">
+                                            (click)="getComponent('/')">
                                             Bank Details
                                         </a>
                                     </li>
