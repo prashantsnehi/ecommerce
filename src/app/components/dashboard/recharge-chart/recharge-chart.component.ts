@@ -55,17 +55,22 @@ export class RechargeChartComponent implements OnInit {
       type: 'doughnut',
       data: {
         labels: [
-          'Red',
-          'Blue',
-          'Yellow'
+          'ShopperStop',
+          'LifeStyle',
+          'Croma Retail',
+          'Reliance Digital',
+          'Vijay Sales'
         ],
         datasets: [{
           label: 'Recharge',
-          data: [300, 50, 100],
+          data: [300, 50, 100,30, 40],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+            'rgb(255, 205, 86)',
+            'rgb(255, 180, 170)',
+            'rgb(154, 162, 135)',
+            'rgb(155, 105, 186)'
           ],
           hoverOffset: 4
         }]

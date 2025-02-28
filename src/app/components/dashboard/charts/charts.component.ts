@@ -18,9 +18,9 @@ export class ChartsComponent implements OnInit {
           type: 'doughnut',
           data: {
             labels: [
-              'Red',
-              'Blue',
-              'Yellow'
+              'Fastag',
+              'GiftCards',
+              'Travel'
             ],
             datasets: [{
               label: 'GTV',

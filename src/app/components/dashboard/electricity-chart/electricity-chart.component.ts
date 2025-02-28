@@ -20,9 +20,9 @@ export class ElectricityChartComponent implements OnInit {
       type: 'pie',
       data: {
         labels: [
-          'Red',
-          'Blue',
-          'Yellow'
+          'Airtel',
+          'IDFC',
+          'HDFC'
         ],
         datasets: [{
           label: 'Electricity',
