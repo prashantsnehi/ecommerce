@@ -14,7 +14,7 @@ export class TopupComponent implements OnInit {
   data = {
     labels: this.labels,
     datasets: [{
-      label: 'My First Dataset',
+      label: 'Months',
       data: [65, 59, 80, 81],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
