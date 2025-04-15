@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fast-tag
+    #platform: linux/amd64
+    container_name: fast-tag
+    #volumes:
+    #  - ./app:/app
+    ports:
+      - "80:80"
+
+# To build and push the image to Docker Hub:
+# 1. Log in to Docker Hub: `docker login`
+# 2. Build the image: `docker-compose build`
+# 3. Push the image: `docker push your-dockerhub-username/fast-tag:latest`
