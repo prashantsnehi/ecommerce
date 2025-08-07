@@ -23,6 +23,8 @@ import { ShowCharPipe } from './_pipes/show-char.pipe';
 import { PrepaidRechargeComponent } from './components/prepaid-recharge/prepaid-recharge.component';
 import { UtiltiyPaymentsComponent } from './components/utiltiy-payments/utiltiy-payments.component';
 import { TopUpRequestHistoryComponent } from './components/reports/top-up-request-history/top-up-request-history.component';
+import { FastTagListComponent } from './components/fastag/fast-tag-list/fast-tag-list.component';
+import { HttpClientModule, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { TopUpRequestHistoryComponent } from './components/reports/top-up-reques
     ShowCharPipe,
     PrepaidRechargeComponent,
     UtiltiyPaymentsComponent,
-    TopUpRequestHistoryComponent
+    TopUpRequestHistoryComponent,
+    FastTagListComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { TopUpRequestHistoryComponent } from './components/reports/top-up-reques
     ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [AppComponent]
 })

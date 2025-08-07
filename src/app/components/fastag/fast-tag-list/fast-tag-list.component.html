@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <h2 class="card-header">
+                Transactions
+                <button type="button" class="btn btn-outline-primary float-end rounded-pill">
+                    Total Transactions <span class="badge bg-success rounded-pill">
+                        {{ fastTags.length }}
+                    </span>
+                </button>
+            </h2>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr [ngClass]="'text-center'">
+                            <th>ID</th>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Vehicle Number</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let fastTag of fastTags">
+                            <td>{{ fastTag.id }}</td>
+                            <td>{{ fastTag.operator | titlecase}}</td>
+                            <td>{{ transforValue(fastTag.name)}}</td>
+                            <td>{{ transforValue(fastTag.vehicleNumber) | uppercase}}</td>
+                            <td [ngClass]="'text-end'">{{ fastTag.amount | currency: 'INR'}}</td>
+                            <td [ngClass]="
+                                fastTag.status == 'success' ? 'badge bg-success rounded-pill text-white text-center m-2' :
+                                fastTag.status == 'pending' ? 'badge bg-warning rounded-pill text-dark text-center m-2' : 
+                                fastTag.status == 'failed' ? 'badge bg-danger rounded-pill text-white text-center m-2': 
+                                'badge bg-secondary rounded-pill text-white text-center m-2'"
+                                [ngStyle]="{ 'text-align': 'center' }"
+                            >
+                                {{ fastTag.status | titlecase}}
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

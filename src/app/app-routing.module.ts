@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'gift-cards', component: GiftCardsComponent },
   { path: 'recharge', component: RechargeChartComponent },
   { path: 'utility', component: UtiltiyPaymentsComponent },
-  { path: 'top-up-history', component: TopUpRequestHistoryComponent },
+  { path: 'top-up-history', component: TopUpRequestHistoryComponent }
 ];
 
 @NgModule({

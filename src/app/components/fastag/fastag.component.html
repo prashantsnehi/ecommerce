@@ -1,7 +1,14 @@
-<div [ngClass]="showDetail ? 'row d-flex justify-content-evenly' : 'row d-flex  justify-content-start'">
-    <div class="col-md-12 card"  *ngIf="!showDetail">
-        <h2 class="card-title text-center bg-primary text-white">
+<div
+    [ngClass]="showDetail ? 'row d-flex justify-content-evenly' : 'row d-flex  justify-content-start'">
+    <div class="col-md-12 card" *ngIf="!showDetail">
+        <h2 class="card-header">
             Recharge your FASTag
+            <button type="button" 
+                class="btn btn-outline-primary float-end rounded-pill"
+                (click)="getOperators()"
+            >
+                Get Operators
+            </button>   
         </h2>
         <div class="card-body">
             <form class="row g-3 needs-validation" [formGroup]="fastagForm"
@@ -11,27 +18,31 @@
                     <label for="inputIOperator"
                         class="form-label">Operators</label>
                     <select id="inputIOperator" class="form-select"
-                        formControlName="operator">
-                        <option selected>Choose...</option>
-                        <option *ngFor="let operator of operators"
-                            value="{{operator}}">
-                            {{operator}}
+                        formControlName="operator"
+                        (change)="setOperatorName($event)">
+                        <option disabled>Choose...</option>
+                        <option
+                            *ngFor="let operator of operators"
+                            value="{{operator.operatorCode}}">
+                            {{operator.operatorName | titlecase}}
                         </option>
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputVehicalNumber" class="form-label">
-                        Vehical Number
+                    <label for="inputVehicleNumber" class="form-label">
+                        Vehicle Number
                     </label>
-                    <input type="text" 
+                    <input type="text"
                         #code
                         class="form-control"
-                        id="inputVehicalNumber"
+                        id="inputvehicleNumber"
                         (input)="code.value = code.value.toUpperCase()"
-                        formControlName="vehicalNumber"
+                        formControlName="vehicleNumber"
+                        placeholder="vehicle number"
                         required>
                     <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please enter vehical number.</div>
+                    <div class="invalid-feedback">vehicle number is
+                        required</div>
                 </div>
                 <div class="col-md-6">
                     <label for="inputAmount"
@@ -39,13 +50,15 @@
                     <input type="number" class="form-control"
                         id="inputAmount"
                         formControlName="amount"
+                        placeholder="amount"
                         required>
                     <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please enter vehical number.</div>
+                    <div class="invalid-feedback">Please enter amount to
+                        pay</div>
                 </div>
                 <div class="col-12" [ngStyle]="{ 'border' : '2px solid red' }">
                     <div class="form-check">
-                        <input class="form-check-input" 
+                        <input class="form-check-input"
                             type="checkbox"
                             id="gridCheck"
                             formControlName="agreed">
@@ -55,17 +68,21 @@
                     </div>
                 </div>
                 <div class="col-12 d-grid gap-2">
-                    <button type="submit" 
-                        class="btn btn-primary"
+                    <button type="submit"
+                        class="btn btn-primary rounded-pill"
                         [disabled]="!fastagForm.valid">Submit</button>
                 </div>
             </form>
+            <span id="errorResponse" *ngIf="displayError">{{error}}</span>
         </div>
     </div>
     <div class="col-md-12 card" *ngIf="showDetail">
-        <h2 class="card-title text-center bg-primary text-white">Vehical Detail</h2>
+        <h2 class="card-title text-center bg-primary text-white">Detail</h2>
         <div class="card-body">
-            <app-fastag-detail [requestForm]="fastagForm" (cancelButton)="cencelButton()"></app-fastag-detail>
+            <app-fastag-detail [requestForm]="fastagForm"
+                [billFetchResponse]="billfetchResponse"
+                [operatorName]="operatorName"
+                (cancelButton)="cencelButton()"></app-fastag-detail>
         </div>
     </div>
 </div>
