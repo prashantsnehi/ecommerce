@@ -13,7 +13,7 @@ export class ApiService {
   url = 'https://api.pointpalindia.com';
   apiCredentials = {
     apiid: "AP90001",                               // api id recieved by pointpal
-    token: "c57e66a0-cd9d-4293-8210-bf2955253bea",  //"34a8fb5a-5336-4beb-b67b-e7791df624d4", // api token received from pointpal
+    token: "34a8fb5a-5336-4beb-b67b-e7791df624d4", //"c57e66a0-cd9d-4293-8210-bf2955253bea",  //"34a8fb5a-5336-4beb-b67b-e7791df624d4", // api token received from pointpal
     serviceName: "fastag"
   }
 
