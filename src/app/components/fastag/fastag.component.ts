@@ -81,7 +81,7 @@ export class FastagComponent implements OnInit {
   getOperators() {
     this.apiService.getOperators().subscribe((response) => {
       // debugger;
-      // console.log(response);
+      console.log(response);
       this.apiResponse = response;
       this.operators = response.data as Operator[];
       this.operators = this.operators.sort((a, b) => a.operatorName.localeCompare(b.operatorName));
@@ -110,7 +110,9 @@ export class FastagComponent implements OnInit {
       console.error('Error fetching operators:', error);
     });
   }
+
   onSubmit(form: FormGroup) {
+    debugger
     if (form.valid) {
       // console.log(form);
       console.log(this.operatorName);
@@ -129,6 +131,7 @@ export class FastagComponent implements OnInit {
         error = `Error: ${error}`;
       }); 
     }
+    console.log('Completed');
   }
 
   cencelButton() {

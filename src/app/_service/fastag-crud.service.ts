@@ -10,7 +10,10 @@ export class FastagCrudService {
   fastTags: Fastag[] = [
     { id: 1, operator: 'Airtel Payment Bank', name: 'Pawan Kumar', vehicleNumber: 'HR10E3750', amount: 500, status: 'success', createdAt: this.currentDate, updatedAt: new Date() },
     { id: 2, operator: 'HDFC Bank', name: 'Rajesh Sharma', vehicleNumber: 'DL8CNB2827', amount: 1000, status: 'pending', createdAt: this.currentDate, updatedAt: new Date()},
-    { id: 3, operator: 'IDFC Bank', name: 'Prashant', vehicleNumber: 'DL8CBC5465', amount: 750, status: 'failed', createdAt: this.currentDate, updatedAt: new Date() }
+    { id: 3, operator: 'IDFC Bank', name: 'M P Bhardwaj', vehicleNumber: 'DL8CBC5465', amount: 750, status: 'success', createdAt: this.currentDate, updatedAt: new Date() },
+    { id: 4, operator: 'Airtel Payment Bank', name: 'Pradeep Gupta', vehicleNumber: 'HR51BY2387', amount: 3750, status: 'failed', createdAt: this.currentDate, updatedAt: new Date() },
+    { id: 5, operator: 'PayTm', name: 'Ravi Kumar', vehicleNumber: 'UP71SDC6754', amount: 750, status: 'success', createdAt: this.currentDate, updatedAt: new Date() },
+    { id: 6, operator: 'IDFC Bank', name: 'Prashant', vehicleNumber: 'DL8CBC5465', amount: 700, status: 'success', createdAt: this.currentDate, updatedAt: new Date() }
   ];
 
   constructor() { }

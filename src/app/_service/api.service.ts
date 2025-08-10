@@ -13,13 +13,12 @@ export class ApiService {
   url = 'https://api.pointpalindia.com';
   apiCredentials = {
     apiid: "AP90001",                               // api id recieved by pointpal
-    token: "34a8fb5a-5336-4beb-b67b-e7791df624d4", //"c57e66a0-cd9d-4293-8210-bf2955253bea",  //"34a8fb5a-5336-4beb-b67b-e7791df624d4", // api token received from pointpal
+    token: "34a8fb5a-5336-4beb-b67b-e7791df624d4",//"79977cf3-6f30-4f9e-a554-4a9ef6e512a9",  //"34a8fb5a-5336-4beb-b67b-e7791df624d4" // api token received from pointpal
     serviceName: "fastag"
   }
 
   constructor(private httpClient: HttpClient) {
   }
-
 
   getOperators(): Observable<ApiResponse<Operator[]>> {
     let apiResponse: ApiResponse<Operator[]> = {
@@ -27,6 +26,28 @@ export class ApiService {
       message: 'failed',
       data: []
     };
+    // fetch(`${this.url}/api/Recharge/OperatorList`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(this.apiCredentials)
+    // })
+    // .then(response => {
+    //   console.log(response);
+    //   let responseModel = response.json();
+    //   const data = responseModel.map(result => {
+    //     apiResponse = {
+    //       statusCode: 'TXN',
+    //       message: 'success',
+    //       data: result.body.data
+    //     }
+    //   })
+    // })
+    // .catch(err => { 
+    //   console.log(err)
+    // });
+
     return this.httpClient.post<ApiResponse<Operator[]>>(`${this.url}/api/Recharge/OperatorList`, this.apiCredentials)
       .pipe(
         map(response => {
